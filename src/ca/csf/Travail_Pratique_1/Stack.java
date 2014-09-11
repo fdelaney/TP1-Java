@@ -4,6 +4,7 @@ public interface Stack {
 
 	
 	
+	
 	public abstract Object Pop ();
 	public abstract void Push (Object object);
 	public abstract Object Peek ();

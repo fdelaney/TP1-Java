@@ -2,6 +2,7 @@ package ca.csf.Travail_Pratique_1;
 
 public class LinkedListStack implements Stack {
 
+	
 	public Object Pop () {
 		return null;
 	}
