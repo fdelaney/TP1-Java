@@ -12,4 +12,10 @@ public class LinkedListStackNode {
 		this.object = object;
 		this.previous = previousStackNode;
 	}
+	
+	public LinkedListStackNode getPrevious(){
+		
+		return this.previous;
+		
+	}
 }

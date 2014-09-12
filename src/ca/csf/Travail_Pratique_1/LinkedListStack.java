@@ -2,28 +2,62 @@ package ca.csf.Travail_Pratique_1;
 
 public class LinkedListStack implements Stack {
 
-	
-	public Object Pop () {
-		return null;
+	private LinkedListStackNode last;
+	private int size = 0;
+
+	public Object Pop() {
+		Object object = last;
+		last = last.getPrevious();
+		
+		return object;
+
 	}
-	public void Push (Object object) {
+
+	public void Push(Object object) {
+		LinkedListStackNode temp = new LinkedListStackNode(object,last);
+		last = temp;
 	}
-	public Object Peek () {
-		return null;
+
+	public Object Peek() {
+		return last;
 	}
-	public Object GetAt (int position) {
-		return null;
+
+	public Object GetAt(int position) {
+		if(size < position){
+			
+			return -1;
+			
+		}
+		LinkedListStackNode temp = last;
+		for(int i = 0;i == position - 1; ++i){
+			
+			temp = temp.getPrevious();
+		}
+		return temp;
+		
 	}
-	public void Clear () {
+
+	public void Clear() {
+		
+		last = null;
 	}
+
 	public boolean isEmpty() {
-		return false;
+
+		if (size == 0) {
+			return true;
+		} else {
+			return false;
+
+		}
 	}
+
 	public int getSize() {
-		return 0;
+		return size;
 	}
+
 	public String toString() {
-		return null;
+		return "a faire";
 	}
-	
+
 }
