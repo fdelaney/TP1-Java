@@ -14,7 +14,7 @@ public class Tower {
 		return (Disk)towerStack.Pop();
 	}
 	public Disk getDiskOnTop(){
-		return (Disk)towerStack.GetAt(0);
+		return (Disk)towerStack.Peek();
 	}
 	public Disk getDiskAt(int position){
 		return (Disk)towerStack.GetAt(position);
