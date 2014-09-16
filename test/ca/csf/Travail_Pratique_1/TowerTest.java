@@ -14,6 +14,7 @@ public class TowerTest {
 		tower = new Tower(new LinkedListStack());
 	}
 	
+	
 	@Test
 	public void whenTowerCreated_thenTowerIsEmpty() {
 		assertEquals(0,tower.getSize());

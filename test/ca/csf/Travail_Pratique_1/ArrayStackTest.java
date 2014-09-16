@@ -169,7 +169,8 @@ public class ArrayStackTest {
 		stack.pop();
 		assertEquals(0, stack.getSize());
 	}
-	
+	 
+	 
 	@Test
 	public void whenClearStackThatContainsElement_thenStackBecomeEmpty() {
 		stack.push(new Object());

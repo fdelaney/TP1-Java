@@ -83,6 +83,7 @@ public class LinkedListStackTest {
 		assertFalse(stack.isEmpty());
 	}
 	
+	
 	@Test
 	public void whenPeekElementInEmptyStack_thenNullIsReturned() {
 		Object returnedObject = stack.Peek();
