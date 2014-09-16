@@ -2,13 +2,15 @@ package ca.csf.Travail_Pratique_1;
 
 public class LinkedListStack implements Stack {
 
-	private LinkedListStackNode last;
-	private int size = 0;
+	private LinkedListStackNode last = null;
+	private int size = -1;
 
 	public Object Pop() {
 		Object object = last;
-		last = last.getPrevious();
 		
+		if(last != null){
+		last = last.getPrevious();
+		}
 		return object;
 
 	}
@@ -23,9 +25,9 @@ public class LinkedListStack implements Stack {
 	}
 
 	public Object GetAt(int position) {
-		if(size < position){
+		if(size < position ){
 			
-			return -1;
+			return null;
 			
 		}
 		LinkedListStackNode temp = last;
