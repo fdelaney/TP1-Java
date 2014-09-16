@@ -21,7 +21,6 @@ public class Main extends Application
 			e.printStackTrace();
 		}
 	}
-	int testpourgithub = 23;
 	public static void main(String[] args) {
 		launch(args);
 	}
