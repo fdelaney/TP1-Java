@@ -18,4 +18,10 @@ public class LinkedListStackNode {
 		return this.previous;
 		
 	}
+	
+	public Object getObject(){
+		
+		return this.object;
+		
+	}
 }

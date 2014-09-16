@@ -23,6 +23,6 @@
 	</center>
 
 	<botton>
-		<button text="Ajouter tour" onAction="#ajoutertour"/>
+		<button text="ajouter tour" onAction="#ajoutertour"/>
 	</botton>
 </BorderPane>
