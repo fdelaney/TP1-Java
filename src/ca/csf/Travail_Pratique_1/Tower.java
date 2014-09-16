@@ -1,30 +1,29 @@
 package ca.csf.Travail_Pratique_1;
 
 public class Tower {
-	private LinkedListStack towerListStack;
-	private ArrayStack towerArrayStack;
+	private Stack towerStack;
 
-	Tower(LinkedListStack linkedListStack){
-		towerListStack = linkedListStack;
+	public Tower(Stack stack){
+		towerStack = stack;
 	}
 	
 	public void addDisk(Disk disk){
-		towerListStack.Push(disk);
+		towerStack.Push(disk);
 	}
 	public Disk removeDisk(){
-		return towerListStack.Pop();
+		return (Disk)towerStack.Pop();
 	}
 	public Disk getDiskOnTop(){
-		return towerListStack.GetAt(0);
+		return (Disk)towerStack.GetAt(0);
 	}
 	public Disk getDiskAt(int position){
-		return towerListStack.GetAt(position);
+		return (Disk)towerStack.GetAt(position);
 	}
 	public int getSize(){
-		return towerListStack.getSize();
+		return towerStack.getSize();
 	}
 	public void clear(){
-		towerListStack.Clear();
+		towerStack.Clear();
 	}
 	
 }
