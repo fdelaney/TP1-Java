@@ -37,6 +37,8 @@ public class LinkedListStackTest {
 	
 	@Test
 	public void whenAddElementToStackAndPop_thenElementIsPoped() {
+		
+		stack.Clear();
 		Object object = new Object();
 		
 		stack.Push(object);
@@ -60,6 +62,7 @@ public class LinkedListStackTest {
 	
 	@Test
 	public void whenPopElementInEmptyStack_thenNullIsReturned() {
+		stack.Clear();
 		Object returnedObject = stack.Pop();
 		
 		assertNull(returnedObject);
@@ -67,6 +70,7 @@ public class LinkedListStackTest {
 	
 	@Test
 	public void whenAddElementInStackAndPeek_thenElementIsReturned() {
+		stack.Clear();
 		Object object = new Object();
 		
 		stack.Push(object);
@@ -77,6 +81,7 @@ public class LinkedListStackTest {
 	
 	@Test
 	public void whenAddElementInStackAndPeek_thenStackIsNotPoppedAndThusNotEmpty() {
+		
 		stack.Push(new Object());
 		stack.Peek();
 		
@@ -94,7 +99,7 @@ public class LinkedListStackTest {
 	@Test
 	public void whenAddElementInStackAndGet_thenElementIsReturned() {
 		Object object = new Object();
-		
+		stack.Clear();
 		stack.Push(object);
 		Object returnedObject = stack.GetAt(0);
 		
@@ -103,6 +108,8 @@ public class LinkedListStackTest {
 	
 	@Test
 	public void whenAddTwoElementsInStackAndGet_thenElementIsReturned() {
+		
+		stack.Clear();
 		Object object1 = new Object();
 		Object object2 = new Object();
 		
@@ -130,6 +137,7 @@ public class LinkedListStackTest {
 	
 	@Test
 	public void whenAddElementToStack_thenStackSizeRepresentsTheNumberOfElementsInStack() {
+		stack.Clear();
 		stack.Push(new Object());
 		assertEquals(1, stack.getSize());
 		stack.Push(new Object());

@@ -2,7 +2,7 @@ package ca.csf.Travail_Pratique_1;
 
 public class ArrayStack implements Stack{
 
-	private int size = 0;
+	private int size = -1;
 	private Object[] array = new Object[3];
 	
 	public Object Pop() {
@@ -22,13 +22,13 @@ public class ArrayStack implements Stack{
 	
 	public Object Peek() {
 		
-		return null;
+		return array[size];
 	}
 
 	
 	public Object GetAt(int position) {
 	
-		return null;
+		return array[position];
 	}
 
 	
