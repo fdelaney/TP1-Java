@@ -1,7 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	
 <?import javafx.scene.layout.BorderPane?>
-	
-<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="ca.csf.Travail_Pratique_1.SampleController">
-	<!-- TODO Add Nodes -->
+<?import javafx.scene.layout.StackPane?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+	fx:controller="ca.csf.Travail_Pratique_1.SampleController">
+	<center>
+		<StackPane>
+
+			<Hbox maximun=(400,300)>
+					<Vbox fx:id="tour1Vbox" alignment = "BOTTON_CENTER">
+						// Caller la fonction rectangle pour chaque tower
+					</vbox>
+					<Vbox>
+						// Caller la fonction rectangle pour chaque tower
+					</Vbox>
+					<Vbox>
+						// Caller la fonction rectangle pour chaque tower
+					</Vbox>
+			</Hbox>
+		</StackPane>
+	</center>
+
+	<botton>
+		<button text="Ajouter tour" onAction="#ajoutertour"/>
+	</botton>
 </BorderPane>
