@@ -6,7 +6,7 @@ import org.junit.Before;
 import org.junit.Test;
 
 public class TowerTest {
-/*
+
 	private Tower tower;
 	
 	@Before
@@ -97,5 +97,5 @@ public class TowerTest {
 		
 		assertEquals(0, tower.getSize());
 	}
-*/
+
 }

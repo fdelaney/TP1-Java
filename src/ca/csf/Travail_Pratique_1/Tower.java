@@ -1,66 +1,30 @@
 package ca.csf.Travail_Pratique_1;
 
-public class Tower implements Stack {
+public class Tower {
+	private LinkedListStack towerListStack;
+	private ArrayStack towerArrayStack;
 
-	Tower(Stack stack){
-		
+	Tower(LinkedListStack linkedListStack){
+		towerListStack = linkedListStack;
 	}
 	
 	public void addDisk(Disk disk){
-		
+		towerListStack.Push(disk);
 	}
 	public Disk removeDisk(){
-		Disk disk= new Disk(1);
-		return disk;
+		return towerListStack.Pop();
 	}
 	public Disk getDiskOnTop(){
-		Disk disk= new Disk(1);
-		return disk;
+		return towerListStack.GetAt(0);
 	}
 	public Disk getDiskAt(int position){
-		Disk disk= new Disk(1);
-		return disk;
+		return towerListStack.GetAt(position);
 	}
 	public int getSize(){
-		int size = 0;
-		return size;
+		return towerListStack.getSize();
 	}
-	public void clear(){}
-
-	@Override
-	public Object Pop() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void Push(Object object) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public Object Peek() {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public Object GetAt(int position) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
-	public void Clear() {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
-	public boolean isEmpty() {
-		// TODO Auto-generated method stub
-		return false;
+	public void clear(){
+		towerListStack.Clear();
 	}
 	
 }
