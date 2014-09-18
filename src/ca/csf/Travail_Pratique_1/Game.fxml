@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+	
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml"
+	fx:controller="ca.csf.Travail_Pratique_1.GameController">
+	<center>
+		<StackPane>
+
+			<Hbox maximun=(400,300)>
+					<button fx:id="Enl1" text="Enlever" onAction="#EnleverTour"/>
+					<Vbox fx:id="tour1Vbox" alignment = "BOTTON_CENTER">
+					
+					</vbox>
+					<button fx:id="Dep1" text="Deposer" onAction="#DeposerTour"/>
+					
+					
+					<button fx:id="Enl2" text="Enlever" onAction="#EnleverTour"/>
+					<Vbox>
+		
+					</Vbox>
+					<button fx:id="Dep2" text="Deposer" onAction="#DeposerTour"/>
+					
+					
+					<button fx:id="Enl3" text="Enlever" onAction="#EnleverTour"/>
+					<Vbox>
+						// Caller la fonction rectangle pour chaque tower
+					</Vbox>
+					<button fx:id="Dep3" text="Deposer" onAction="#DeposerTour"/>
+			</Hbox>
+		</StackPane>
+	</center>
+
+	<botton>
+		<button text="ajouter tour" onAction="#ajoutertour"/>
+	</botton>
+</BorderPane>
