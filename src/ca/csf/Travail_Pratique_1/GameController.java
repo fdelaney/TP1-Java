@@ -1,5 +1,6 @@
 package ca.csf.Travail_Pratique_1;
 
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.layout.VBox;
@@ -10,6 +11,7 @@ public class GameController {
 	Tower[] tower = { new Tower(new ArrayStack(3)), new Tower(new ArrayStack(3)),
 			new Tower(new ArrayStack(3)) };
 
+	private Disk currentRectangle = null;
 	@FXML
 	private Button Enl1;
 	@FXML
@@ -30,12 +32,32 @@ public class GameController {
 	@FXML
 	private VBox tour3Vbox;
 
-	
+	public void DeposerTour(ActionEvent actionEvent){
+		
+		Enl1.setDisable(false);
+		Enl2.setDisable(false);
+		Enl3.setDisable(false);
+		Dep1.setDisable(true);
+		Dep2.setDisable(true);
+		Dep3.setDisable(true);
+		
+		if(actionEvent.getSource() == Dep1){
+			tower[0].addDisk(currentRectangle);
+		}
+		else if(actionEvent.getSource() == Dep2){
+			tower[1].addDisk(currentRectangle);
+		}
+		else if(actionEvent.getSource() == Dep3){
+			tower[2].addDisk(currentRectangle);
+		}
+		currentRectangle = null;
+		RefreshDisks();
+	}
 	
 	
 	
 	@FXML
-	public void RefreshCircles() {
+	public void RefreshDisks() {
 		for (int i = 0; i < 3; i++) {
 			if (tower[i].getSize() > -1) {
 				for (int x = tower[i].getSize(); x > 0; x--) {
