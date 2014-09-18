@@ -4,7 +4,7 @@ import javafx.fxml.FXML;
 import javafx.scene.layout.VBox;
 import javafx.scene.shape.Rectangle;
 
-public class SampleController {
+public class GameController {
 	@FXML
 	private VBox tour1Vbox;
 

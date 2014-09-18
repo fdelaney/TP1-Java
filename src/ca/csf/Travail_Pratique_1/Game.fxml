@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.StackPane?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml"
-	fx:controller="ca.csf.Travail_Pratique_1.SampleController">
+	fx:controller="ca.csf.Travail_Pratique_1.GameController">
 	<center>
 		<StackPane>
 

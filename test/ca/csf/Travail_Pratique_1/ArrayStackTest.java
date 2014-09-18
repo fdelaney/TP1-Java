@@ -130,8 +130,8 @@ public class ArrayStackTest {
 		
 		stack.Push(object1);
 		stack.Push(object2);
-		Object returnedObject2 = stack.GetAt(0);
-		Object returnedObject1 = stack.GetAt(1);
+		Object returnedObject1 = stack.GetAt(0);
+		Object returnedObject2 = stack.GetAt(1);
 		
 		assertSame(object2, returnedObject1);
 		assertSame(object1, returnedObject2);
