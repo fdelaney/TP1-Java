@@ -10,6 +10,7 @@ public class ArrayStack implements Stack{
 	
 		Object[] temp = new Object[i];
 		array = temp;
+		
 		arrayTotalSize = i;
 	}
 
