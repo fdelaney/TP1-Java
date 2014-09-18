@@ -7,8 +7,8 @@ import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
 
 public class SampleController {
-	Tower[] tower = { new Tower(new ArrayStack()), new Tower(new ArrayStack()),
-			new Tower(new ArrayStack()) };
+	Tower[] tower = { new Tower(new ArrayStack(3)), new Tower(new ArrayStack(3)),
+			new Tower(new ArrayStack(3)) };
 
 	@FXML
 	private Button Enl1;
