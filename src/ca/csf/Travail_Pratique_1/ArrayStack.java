@@ -3,12 +3,14 @@ package ca.csf.Travail_Pratique_1;
 public class ArrayStack implements Stack{
 
 	private int size = 0;
-	private Object[] array = new Object[18];
+	private int arrayTotalSize = 3;
+	private Object[] array = new Object[3];
 	
 	public ArrayStack(int i) {
 	
-		
-		
+		Object[] temp = new Object[i];
+		array = temp;
+		arrayTotalSize = i;
 	}
 
 
@@ -20,16 +22,29 @@ public class ArrayStack implements Stack{
 	}	
 	    Object temp = array[size - 1];
 	    array[size - 1] = null;
-	    size--;
+	    --size;
 		return temp;
 	}
 
 	
 	public void Push(Object object) {
 		
+		if(arrayTotalSize == size){
 		
-		array[size] = object;
+			Object[] temp = new Object[arrayTotalSize + 1];
+			for(int i = 0;i < size ;++i){
+				
+				temp[i] = array[i];
+				
+				
+			}	
+			
+		arrayTotalSize++;
+		array = temp;
+		}
 		size++;
+		array[size - 1] = object;
+		
 		
 	}
 
@@ -41,13 +56,13 @@ public class ArrayStack implements Stack{
 			return null;
 		}
 		
-		return array[size - 1];
+		return array[size- 1];
 	}
 
 	
 	public Object GetAt(int position) {
 	
-		return array[position];
+		return array[size - 1 - position];
 	}
 
 	
@@ -56,6 +71,7 @@ public class ArrayStack implements Stack{
 		Object[] arrayTemp = new Object[3];
 		array = arrayTemp;
 		size = 0;
+		arrayTotalSize = 3;
 	}
 
 	

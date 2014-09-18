@@ -37,7 +37,7 @@ public class ArrayStackTest {
 	
 	@Test
 	public void whenAddElementToStackAndPop_thenElementIsPoped() {
-		stack.Clear();
+	
 		Object object = new Object();
 		
 		stack.Push(object);
@@ -97,7 +97,7 @@ public class ArrayStackTest {
 	
 	@Test
 	public void whenAddElementInStackAndPeek_thenStackIsNotPoppedAndThusNotEmpty() {
-		stack.Clear();
+	
 		stack.Push(new Object());
 		stack.Peek();
 		
@@ -124,14 +124,14 @@ public class ArrayStackTest {
 	
 	@Test
 	public void whenAddTwoElementsInStackAndGet_thenElementIsReturned() {
-		stack.Clear();
+		
 		Object object1 = new Object();
 		Object object2 = new Object();
 		
 		stack.Push(object1);
 		stack.Push(object2);
-		Object returnedObject2 = stack.GetAt(0);
-		Object returnedObject1 = stack.GetAt(1);
+		Object returnedObject1 = stack.GetAt(0);
+		Object returnedObject2 = stack.GetAt(1);
 		
 		assertSame(object2, returnedObject1);
 		assertSame(object1, returnedObject2);
@@ -139,6 +139,7 @@ public class ArrayStackTest {
 	
 	@Test
 	public void whenAddElementInStackAndGet_thenStackIsNotPoppedAndThusNotEmpty() {
+	
 		stack.Push(new Object());
 		stack.GetAt(0);
 		
@@ -147,7 +148,7 @@ public class ArrayStackTest {
 	
 	@Test
 	public void whenStackCreated_thenStackSizeIsZero() {
-		stack.Clear();
+	
 		assertEquals(0, stack.getSize());
 	}
 	
