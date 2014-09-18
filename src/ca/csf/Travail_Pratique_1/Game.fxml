@@ -9,15 +9,25 @@
 		<StackPane>
 
 			<Hbox maximun=(400,300)>
+					<button fx:id="Enl1" text="Enlever" onAction="#EnleverTour"/>
 					<Vbox fx:id="tour1Vbox" alignment = "BOTTON_CENTER">
-						// Caller la fonction rectangle pour chaque tower
+					
 					</vbox>
+					<button fx:id="Dep1" text="Deposer" onAction="#DeposerTour"/>
+					
+					
+					<button fx:id="Enl2" text="Enlever" onAction="#EnleverTour"/>
+					<Vbox>
+		
+					</Vbox>
+					<button fx:id="Dep2" text="Deposer" onAction="#DeposerTour"/>
+					
+					
+					<button fx:id="Enl3" text="Enlever" onAction="#EnleverTour"/>
 					<Vbox>
 						// Caller la fonction rectangle pour chaque tower
 					</Vbox>
-					<Vbox>
-						// Caller la fonction rectangle pour chaque tower
-					</Vbox>
+					<button fx:id="Dep3" text="Deposer" onAction="#DeposerTour"/>
 			</Hbox>
 		</StackPane>
 	</center>
