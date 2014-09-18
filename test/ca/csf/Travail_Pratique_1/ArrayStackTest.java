@@ -9,7 +9,7 @@ import org.junit.Test;
 public class ArrayStackTest {
 
 	private ArrayStack stack;
-/*
+
 	@Before
 	public void setUp() throws Exception {
 		stack = new ArrayStack(10);
@@ -22,25 +22,26 @@ public class ArrayStackTest {
 	
 	@Test
 	public void whenAddElementToStack_thenStackIsNotEmpty() {
-		stack.push(new Object());
+		stack.Push(new Object());
 		
 		assertFalse(stack.isEmpty());
 	}
 	
 	@Test
 	public void whenAddAndRemoveElementOnStack_thenStackIsEmpty() {
-		stack.push(new Object());
-		stack.pop();
+		stack.Push(new Object());
+		stack.Pop();
 		
 		assertTrue(stack.isEmpty());
 	}
 	
 	@Test
 	public void whenAddElementToStackAndPop_thenElementIsPoped() {
+		stack.Clear();
 		Object object = new Object();
 		
-		stack.push(object);
-		Object returnedObject = stack.pop();
+		stack.Push(object);
+		Object returnedObject = stack.Pop();
 		
 		assertSame(object, returnedObject);
 	}
@@ -50,9 +51,9 @@ public class ArrayStackTest {
 		Object object1 = new Object();
 		Object object2 = new Object();
 		
-		stack.push(object1);
-		stack.push(object2);
-		Object returnedObject = stack.pop();
+		stack.Push(object1);
+		stack.Push(object2);
+		Object returnedObject = stack.Pop();
 		
 		assertSame(object2, returnedObject);
 		assertNotSame(object1, returnedObject);
@@ -66,20 +67,20 @@ public class ArrayStackTest {
 		Object object3 = new Object();
 		Object object4 = new Object();
 		
-		stack.push(object1);
-		stack.push(object2);
-		stack.push(object3);
-		stack.push(object4);
+		stack.Push(object1);
+		stack.Push(object2);
+		stack.Push(object3);
+		stack.Push(object4);
 		
-		assertSame(object4, stack.pop());
-		assertSame(object3, stack.pop());
-		assertSame(object2, stack.pop());
-		assertSame(object1, stack.pop());
+		assertSame(object4, stack.Pop());
+		assertSame(object3, stack.Pop());
+		assertSame(object2, stack.Pop());
+		assertSame(object1, stack.Pop());
 	}
 	
 	@Test
 	public void whenPopElementInEmptyStack_thenNullIsReturned() {
-		Object returnedObject = stack.pop();
+		Object returnedObject = stack.Pop();
 		
 		assertNull(returnedObject);
 	}
@@ -88,23 +89,25 @@ public class ArrayStackTest {
 	public void whenAddElementInStackAndPeek_thenElementIsReturned() {
 		Object object = new Object();
 		
-		stack.push(object);
-		Object returnedObject = stack.peek();
+		stack.Push(object);
+		Object returnedObject = stack.Peek();
 		
 		assertSame(object, returnedObject);
 	}
 	
 	@Test
 	public void whenAddElementInStackAndPeek_thenStackIsNotPoppedAndThusNotEmpty() {
-		stack.push(new Object());
-		stack.peek();
+		stack.Clear();
+		stack.Push(new Object());
+		stack.Peek();
 		
 		assertFalse(stack.isEmpty());
 	}
 	
 	@Test
 	public void whenPeekElementInEmptyStack_thenNullIsReturned() {
-		Object returnedObject = stack.peek();
+		stack.Clear();
+		Object returnedObject = stack.Peek();
 		
 		assertNull(returnedObject);
 	}
@@ -113,21 +116,22 @@ public class ArrayStackTest {
 	public void whenAddElementInStackAndGet_thenElementIsReturned() {
 		Object object = new Object();
 		
-		stack.push(object);
-		Object returnedObject = stack.getAt(0);
+		stack.Push(object);
+		Object returnedObject = stack.GetAt(0);
 		
 		assertSame(object, returnedObject);
 	}
 	
 	@Test
 	public void whenAddTwoElementsInStackAndGet_thenElementIsReturned() {
+		stack.Clear();
 		Object object1 = new Object();
 		Object object2 = new Object();
 		
-		stack.push(object1);
-		stack.push(object2);
-		Object returnedObject1 = stack.getAt(0);
-		Object returnedObject2 = stack.getAt(1);
+		stack.Push(object1);
+		stack.Push(object2);
+		Object returnedObject2 = stack.GetAt(0);
+		Object returnedObject1 = stack.GetAt(1);
 		
 		assertSame(object2, returnedObject1);
 		assertSame(object1, returnedObject2);
@@ -135,58 +139,59 @@ public class ArrayStackTest {
 	
 	@Test
 	public void whenAddElementInStackAndGet_thenStackIsNotPoppedAndThusNotEmpty() {
-		stack.push(new Object());
-		stack.getAt(0);
+		stack.Push(new Object());
+		stack.GetAt(0);
 		
 		assertFalse(stack.isEmpty());
 	}
 	
 	@Test
 	public void whenStackCreated_thenStackSizeIsZero() {
+		stack.Clear();
 		assertEquals(0, stack.getSize());
 	}
 	
 	@Test
 	public void whenAddElementToStack_thenStackSizeRepresentsTheNumberOfElementsInStack() {
-		stack.push(new Object());
+		stack.Push(new Object());
 		assertEquals(1, stack.getSize());
-		stack.push(new Object());
+		stack.Push(new Object());
 		assertEquals(2, stack.getSize());
-		stack.push(new Object());
+		stack.Push(new Object());
 		assertEquals(3, stack.getSize());
 	}
 	
 	@Test
 	public void whenRemoveElementInStack_thenStackSizeRepresentsTheNumberOfElementsInStack() {
-		stack.push(new Object());
-		stack.push(new Object());
-		stack.push(new Object());
+		stack.Push(new Object());
+		stack.Push(new Object());
+		stack.Push(new Object());
 		
-		stack.pop();
+		stack.Pop();
 		assertEquals(2, stack.getSize());
-		stack.pop();
+		stack.Pop();
 		assertEquals(1, stack.getSize());
-		stack.pop();
+		stack.Pop();
 		assertEquals(0, stack.getSize());
 	}
 	 
 	 
 	@Test
 	public void whenClearStackThatContainsElement_thenStackBecomeEmpty() {
-		stack.push(new Object());
+		stack.Push(new Object());
 		
-		stack.clear();
+		stack.Clear();
 		
 		assertTrue(stack.isEmpty());
 	}
 	
 	@Test
 	public void whenClearStackThatContainsElement_thenStackSizeBecomeZero() {
-		stack.push(new Object());
+		stack.Push(new Object());
 		
-		stack.clear();
+		stack.Clear();
 		
 		assertEquals(0, stack.getSize());
 	}
-*/
+
 }
