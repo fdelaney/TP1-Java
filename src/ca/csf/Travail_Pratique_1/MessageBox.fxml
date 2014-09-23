@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="ca.csf.Travail_Pratique_1.GameController">
+	<center>
+	<Label text="Voulez-vous quitter ou recommencer une partie ?" />
+	
+	
+	</center>
+	<bottom>
+	<HBox>
+	<Button text="Quitter" onAction="#Quitter"/>
+	
+	</HBox>
+	
+	</bottom>
+	
+	
+	
+</BorderPane>
+
