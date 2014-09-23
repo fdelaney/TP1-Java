@@ -1,38 +1,43 @@
 <?xml version="1.0" encoding="UTF-8"?>
 	
-<?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
 
 <BorderPane xmlns:fx="http://javafx.com/fxml"
 	fx:controller="ca.csf.Travail_Pratique_1.GameController">
+	
+	<top>
+	</top>
 	<center>
 		<StackPane>
-
-			<Hbox maximun=(400,300)>
-					<button fx:id="Enl1" text="Enlever" onAction="#EnleverTour"/>
-					<Vbox fx:id="tour1Vbox" alignment = "BOTTON_CENTER">
+				<HBox>
+				 <!--  Mettre l'image de fond avec les tours-->
+				</HBox>
+				
+				<HBox maxHeight="400" maxWidth="300" >
+					<Button fx:id="Enl1" text="Enlever" onAction="#EnleverTour"/>
+					<VBox fx:id="tour1VBox" alignment = "BOTTOM_CENTER">
 					
-					</vbox>
-					<button fx:id="Dep1" text="Deposer" onAction="#DeposerTour"/>
+					</VBox>
+					<Button fx:id="Dep1" text="Deposer" onAction="#DeposerTour"/>
 					
 					
-					<button fx:id="Enl2" text="Enlever" onAction="#EnleverTour"/>
-					<Vbox>
+					<Button fx:id="Enl2" text="Enlever" onAction="#EnleverTour"/>
+					<VBox>
 		
-					</Vbox>
-					<button fx:id="Dep2" text="Deposer" onAction="#DeposerTour"/>
+					</VBox>
+					<Button fx:id="Dep2" text="Deposer" onAction="#DeposerTour"/>
 					
 					
-					<button fx:id="Enl3" text="Enlever" onAction="#EnleverTour"/>
-					<Vbox>
-						// Caller la fonction rectangle pour chaque tower
-					</Vbox>
-					<button fx:id="Dep3" text="Deposer" onAction="#DeposerTour"/>
-			</Hbox>
+					<Button fx:id="Enl3" text="Enlever" onAction="#EnleverTour"/>
+					<VBox>
+						<!-- Caller la fonction rectangle pour chaque tower -->
+					</VBox>
+					<Button fx:id="Dep3" text="Deposer" onAction="#DeposerTour"/>
+			</HBox>
 		</StackPane>
 	</center>
 
-	<botton>
-		<button text="ajouter tour" onAction="#ajoutertour"/>
-	</botton>
+	<bottom>
+	</bottom>
 </BorderPane>
