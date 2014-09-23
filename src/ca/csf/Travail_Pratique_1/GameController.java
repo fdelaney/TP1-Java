@@ -11,7 +11,8 @@ public class GameController {
 	Tower[] tower = { new Tower(new ArrayStack(3)),
 			new Tower(new ArrayStack(3)), new Tower(new ArrayStack(3)) };
 	private Disk currentRectangle;
-
+	private int nbDisk;
+	
 	@FXML
 	private Button Enl1;
 	@FXML
@@ -34,8 +35,17 @@ public class GameController {
 	@FXML
 	private VBox currentRec;
 
-	private void StartNewGame(){
+	@FXML
+	public void startNewGame(ActionEvent actionEvent){
+		Color[] color = { Color.BLUE, Color.GREEN, Color.YELLOW, Color.ORANGE, Color.RED, Color.PURPLE };
+		Button button = (Button)actionEvent.getSource();
+		nbDisk = Integer.parseInt(button.getId());
 		
+		for(int i = 0; i > nbDisk; ++i ){
+			tower[0].addDisk(new Disk((350-i*50),(color[i])));
+		} 
+		
+		RefreshDisks();
 	}
 	
 	@FXML

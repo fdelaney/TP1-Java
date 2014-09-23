@@ -3,10 +3,18 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
 
-<BorderPane xmlns:fx="http://javafx.com/fxml"
-	fx:controller="ca.csf.Travail_Pratique_1.GameController">
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="ca.csf.Travail_Pratique_1.GameController">
 	
 	<top>
+	<VBox alignment = "TOP_CENTER">
+	<Label>Jeu des tours de Hanoi</Label>
+	<HBox>
+		<Button fx:id="startButton3" id="3" text="Nouvelle Partie (3 disques)" onAction="#startNewGame"></Button>
+		<Button fx:id="startButton4" id="4" text="Nouvelle Partie (4 disques)" onAction="#startNewGame"></Button>
+		<Button fx:id="startButton5" id="5" text="Nouvelle Partie (5 disques)" onAction="#startNewGame"></Button>
+		<Button fx:id="startButton6" id="6" text="Nouvelle Partie (6 disques)" onAction="#startNewGame"></Button>
+	</HBox>
+	</VBox>
 	</top>
 	<center>
 		<StackPane>
@@ -15,26 +23,22 @@
 				</HBox>
 				
 				<HBox maxHeight="400" maxWidth="300" >
-					<Button fx:id="Enl1" text="Enlever" onAction="#EnleverTour"/>
 					<VBox fx:id="tour1VBox" alignment = "BOTTOM_CENTER">
-					
+						<Button fx:id="Enl1" text="Enlever" onAction="#EnleverTour"/>
+						<Button fx:id="Dep1" text="Deposer" onAction="#DeposerTour"/>	
 					</VBox>
-					<Button fx:id="Dep1" text="Deposer" onAction="#DeposerTour"/>
 					
-					
-					<Button fx:id="Enl2" text="Enlever" onAction="#EnleverTour"/>
-					<VBox>
-		
+					<VBox fx:id="tour2VBox" alignment = "BOTTOM_CENTER">
+						<Button fx:id="Enl2" text="Enlever" onAction="#EnleverTour"/>
+						<Button fx:id="Dep2" text="Deposer" onAction="#DeposerTour"/>
 					</VBox>
-					<Button fx:id="Dep2" text="Deposer" onAction="#DeposerTour"/>
 					
-					
-					<Button fx:id="Enl3" text="Enlever" onAction="#EnleverTour"/>
-					<VBox>
+					<VBox fx:id="tour3VBox" alignment = "BOTTOM_CENTER">
+						<Button fx:id="Enl3" text="Enlever" onAction="#EnleverTour"/>
+						<Button fx:id="Dep3" text="Deposer" onAction="#DeposerTour"/>
 						<!-- Caller la fonction rectangle pour chaque tower -->
 					</VBox>
-					<Button fx:id="Dep3" text="Deposer" onAction="#DeposerTour"/>
-			</HBox>
+				</HBox>
 		</StackPane>
 	</center>
 
