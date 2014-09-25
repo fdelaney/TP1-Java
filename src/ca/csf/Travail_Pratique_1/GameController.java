@@ -1,17 +1,29 @@
 package ca.csf.Travail_Pratique_1;
 
+import java.io.IOException;
+
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
+import javafx.scene.Scene;
 import javafx.scene.control.Button;
+import javafx.scene.layout.BorderPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Color;
 import javafx.scene.shape.Rectangle;
+import javafx.stage.Modality;
+import javafx.stage.Stage;
+import javafx.stage.Window;
 
 public class GameController {
 	Tower[] tower = { new Tower(new ArrayStack(3)),
 			new Tower(new ArrayStack(3)), new Tower(new ArrayStack(3)) };
 	private Disk currentRectangle;
+
 	private int nbDisk;
+
+	@FXML
+	private BorderPane parent;
 
 	@FXML
 	private Button Enl1;
@@ -49,6 +61,8 @@ public class GameController {
 		}
 
 		RefreshDisks();
+
+		
 	}
 
 	@FXML
@@ -119,6 +133,22 @@ public class GameController {
 		Dep2.setDisable(true);
 		Dep3.setDisable(true);
 
+		if (tower[2].getSize() == nbDisk) {
+			try {
+				Stage stage = new Stage();
+
+				stage.setScene(new Scene(FXMLLoader.load(getClass()
+						.getResource("MessageBox.fxml"))));
+
+				stage.initOwner(parent.getScene().getWindow());
+				stage.initModality(Modality.WINDOW_MODAL);
+				stage.show();
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+
 		RefreshDisks();
 	}
 
@@ -144,6 +174,7 @@ public class GameController {
 					Rectangle rectangle = new Rectangle(tower[x].getDiskAt(x)
 							.getSize(), 50);
 					rectangle.setFill(tower[x].getDiskAt(x).getColor());
+
 
 					if (i == 0) {
 						tour1Vbox.getChildren().add(rectangle);
