@@ -2,8 +2,9 @@
 	
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.control.*?>
-<BorderPane fx:id="parent" xmlns:fx="http://javafx.com/fxml" fx:controller="ca.csf.Travail_Pratique_1.GameController">
-	
+<BorderPane fx:id="parent" xmlns:fx="http://javafx.com/fxml"
+	fx:controller="ca.csf.Travail_Pratique_1.GameController">
+
 	<top>
 		<VBox alignment="TOP_CENTER">
 			<Label>Jeu des tours de Hanoi</Label>
@@ -25,26 +26,38 @@
 				<!-- Mettre l'image de fond avec les tours -->
 			</HBox>
 
-			<HBox fx:id="currentRecHBox" alignement="TOP_CENTER">
-			</HBox>
 
 			<HBox maxHeight="400" maxWidth="300">
-			
-				<VBox fx:id="tour1VBox" alignment="BOTTOM_CENTER">
-					<Button fx:id="Enl1" text="Enlever" onAction="#EnleverTour" />
-					<Button fx:id="Dep1" text="Deposer" onAction="#DeposerTour" />
-				</VBox>
+				<HBox fx:id="currentRecHBox" alignement="TOP_CENTER">
+				</HBox>
 
-				<VBox fx:id="tour2VBox" alignment="BOTTOM_CENTER">
-					<Button fx:id="Enl2" text="Enlever" onAction="#EnleverTour" />
-					<Button fx:id="Dep2" text="Deposer" onAction="#DeposerTour" />
-				</VBox>
+				<HBox>
+					<VBox fx:id="tour1VBox" alignment="BOTTOM_CENTER">
+					</VBox>
 
-				<VBox fx:id="tour3VBox" alignment="BOTTOM_CENTER">
-					<Button fx:id="Enl3" text="Enlever" onAction="#EnleverTour" />
-					<Button fx:id="Dep3" text="Deposer" onAction="#DeposerTour" />
-					<!-- Caller la fonction rectangle pour chaque tower -->
-				</VBox>
+					<VBox fx:id="tour2VBox" alignment="BOTTOM_CENTER">
+					</VBox>
+
+					<VBox fx:id="tour3VBox" alignment="BOTTOM_CENTER">
+					</VBox>
+				</HBox>
+
+				<HBox>
+					<VBox>
+						<Button fx:id="enl1" text="Enlever" onAction="#enleverDisk" />
+						<Button fx:id="dep1" text="Deposer" onAction="#deposerDisk" />
+					</VBox>
+
+					<VBox>
+						<Button fx:id="enl2" text="Enlever" onAction="#enleverDisk" />
+						<Button fx:id="dep2" text="Deposer" onAction="#deposerDisk" />
+					</VBox>
+
+					<VBox>
+						<Button fx:id="enl3" text="Enlever" onAction="#enleverDisk" />
+						<Button fx:id="dep3" text="Deposer" onAction="#deposerDisk" />
+					</VBox>
+				</HBox>
 			</HBox>
 		</StackPane>
 	</center>

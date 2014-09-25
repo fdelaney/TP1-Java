@@ -26,28 +26,28 @@ public class GameController {
 	private BorderPane parent;
 
 	@FXML
-	private Button Enl1;
+	private Button enl1;
 	@FXML
-	private Button Enl2;
+	private Button enl2;
 	@FXML
-	private Button Enl3;
+	private Button enl3;
 	@FXML
-	private Button Dep1;
+	private Button dep1;
 	@FXML
-	private Button Dep2;
+	private Button dep2;
 	@FXML
-	private Button Dep3;
+	private Button dep3;
 
 	@FXML
-	private VBox tour1Vbox;
+	private VBox tour1VBox;
 	@FXML
-	private VBox tour2Vbox;
+	private VBox tour2VBox;
 	@FXML
-	private VBox tour3Vbox;
+	private VBox tour3VBox;
 	@FXML
 	private VBox currentRecHBox;
 
-	VBox[] vbox = {tour1Vbox, tour2Vbox, tour3Vbox};
+	VBox[] vbox = {tour1VBox, tour2VBox, tour3VBox};
 	
 	@FXML
 	public void startNewGame(ActionEvent actionEvent) {
@@ -60,26 +60,22 @@ public class GameController {
 			tower[0].addDisk(new Disk((350 - i * 50), (color[i])));
 		}
 
-		RefreshDisks();
+		updateGraphics();
 
 		
 	}
 
 	@FXML
-	public void VerificationTours() {
-
-	}
-
-	public void EnleverTour(ActionEvent actionEvent) {
+	public void enleverDisk(ActionEvent actionEvent) {
 		// --- Disable buttons
 
-		Enl1.setDisable(true);
-		Enl2.setDisable(true);
-		Enl3.setDisable(true);
+		enl1.setDisable(true);
+		enl2.setDisable(true);
+		enl3.setDisable(true);
 
-		if (actionEvent.getSource() == Enl1) {
+		if (actionEvent.getSource() == enl1) {
 			currentRectangle = tower[0].removeDisk();
-		} else if (actionEvent.getSource() == Enl2) {
+		} else if (actionEvent.getSource() == enl2) {
 			currentRectangle = tower[1].removeDisk();
 		} else {
 			currentRectangle = tower[2].removeDisk();
@@ -89,30 +85,31 @@ public class GameController {
 		// grande
 
 		if (currentRectangle.getSize() > tower[0].getDiskOnTop().getSize()) {
-			Dep1.setDisable(true);
+			dep1.setDisable(true);
 		} else {
-			Dep1.setDisable(false);
+			dep1.setDisable(false);
 		}
 		if (currentRectangle.getSize() > tower[1].getDiskOnTop().getSize()) {
-			Dep2.setDisable(true);
+			dep2.setDisable(true);
 		} else {
-			Dep2.setDisable(false);
+			dep2.setDisable(false);
 		}
 		if (currentRectangle.getSize() > tower[2].getDiskOnTop().getSize()) {
-			Dep3.setDisable(true);
+			dep3.setDisable(true);
 		} else {
-			Dep3.setDisable(false);
+			dep3.setDisable(false);
 		}
 		// --- End Disable Buttons
 
-		RefreshDisks();
+		updateGraphics();
 	}
 
-	public void DeposerTour(ActionEvent actionEvent) {
+	@FXML
+	public void deposerDisk(ActionEvent actionEvent) {
 
-		if (actionEvent.getSource() == Enl1) {
+		if (actionEvent.getSource() == enl1) {
 			tower[0].addDisk(currentRectangle);
-		} else if (actionEvent.getSource() == Enl2) {
+		} else if (actionEvent.getSource() == enl2) {
 			tower[1].addDisk(currentRectangle);
 		} else {
 			tower[2].addDisk(currentRectangle);
@@ -121,17 +118,17 @@ public class GameController {
 		currentRectangle = null;
 
 		if (tower[0].getSize() != 0) {
-			Enl1.setDisable(false);
+			enl1.setDisable(false);
 		}
 		if (tower[1].getSize() != 0) {
-			Enl2.setDisable(false);
+			enl2.setDisable(false);
 		}
 		if (tower[2].getSize() != 0) {
-			Enl3.setDisable(false);
+			enl3.setDisable(false);
 		}
-		Dep1.setDisable(true);
-		Dep2.setDisable(true);
-		Dep3.setDisable(true);
+		dep1.setDisable(true);
+		dep2.setDisable(true);
+		dep3.setDisable(true);
 
 		if (tower[2].getSize() == nbDisk) {
 			try {
@@ -149,15 +146,15 @@ public class GameController {
 			}
 		}
 
-		RefreshDisks();
+		updateGraphics();
 	}
 
 	@FXML
 	public void RefreshDisks() {
 
-		tour1Vbox.getChildren().clear();
-		tour2Vbox.getChildren().clear();
-		tour3Vbox.getChildren().clear();
+		tour1VBox.getChildren().clear();
+		tour2VBox.getChildren().clear();
+		tour3VBox.getChildren().clear();
 
 		if (currentRecHBox != null) {
 			Rectangle rectangleCurrent = new Rectangle(
